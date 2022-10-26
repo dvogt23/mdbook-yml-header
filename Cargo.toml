@@ -1,0 +1,18 @@
+[package]
+name = "mdBook-yml-header"
+version = "0.1.0"
+authors = [
+    "Dmitrij Vogt <divogt@vogt.dev>"
+]
+documentation = "https://github.com/dvogt23/mdBook-yml-header/README.md"
+edition = "2021"
+keywords = ["book", "gitbook", "rustbook", "markdown", "preprocessor"]
+license = "MPL-2.0"
+readme = "README.md"
+repository = "https://github.com/dvogt23/mdBook-yml-header"
+description = "mdBook preprocessor for removing yml header"
+
+[dependencies]
+
+[dev-dependencies]
+semver = "1.0"
