@@ -1,6 +1,6 @@
 # mdBook-yml-header
 
-A preprocessor for [mdbook](https://github.com/rust-lang-nursery/mdBook) to remove yml-header within `---` at the top of
+A preprocessor for [mdbook](https://github.com/rust-lang-nursery/mdBook) to remove yml-header ([front-matter](https://help.obsidian.md/Advanced+topics/YAML+front+matter)) within `---` at the top of
 a `.md` file.
 
 ## Installation
