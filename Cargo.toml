@@ -1,9 +1,7 @@
 [package]
 name = "mdbook-yml-header"
 version = "0.1.0"
-authors = [
-    "Dmitrij Vogt <divogt@vogt.dev>"
-]
+authors = ["Vogt, Dimitrij <divogt@dima23.de>"]
 documentation = "https://github.com/dvogt23/mdBook-yml-header/README.md"
 edition = "2021"
 keywords = ["book", "gitbook", "rustbook", "markdown", "preprocessor"]
