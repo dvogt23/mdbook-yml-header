@@ -14,7 +14,7 @@ cargo install mdbook-yml-header
 Then add this to your `book.toml`
 
 ```toml
-[preprocessor.mermaid]
+[preprocessor.yml-header]
 ```
 
 ## License
