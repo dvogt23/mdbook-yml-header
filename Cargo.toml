@@ -11,7 +11,7 @@ repository = "https://github.com/dvogt23/mdbook-yml-header"
 description = "mdBook preprocessor for removing yml header"
 
 [dependencies]
-clap = "2.*"
+clap = "3.*"
 lazy_static = "1.*"
 mdbook = "0.4.*"
 regex = "1.*"
