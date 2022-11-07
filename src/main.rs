@@ -8,7 +8,7 @@ use mdbook::{
 use regex::Regex;
 use std::{io, process};
 
-pub fn make_app() -> App<'static, 'static> {
+pub fn make_app() -> App<'static> {
     App::new("footnote-preprocessor")
         .about("An mdbook preprocessor which converts expands footnote markers")
         .subcommand(
