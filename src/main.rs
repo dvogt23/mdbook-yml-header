@@ -64,7 +64,7 @@ fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> ! {
 }
 
 lazy_static! {
-    static ref HEADER_RE: Regex = Regex::new(r"(?P<header>---\n((.+\n)+)---)").unwrap();
+    static ref HEADER_RE: Regex = Regex::new(r"(?P<header>---\r?\n((.+\r?\n)+)---)").unwrap();
 }
 
 /// A pre-processor that removes header between ---
