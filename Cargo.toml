@@ -1,6 +1,6 @@
 [package]
 name = "mdbook-yml-header"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Vogt, Dimitrij <divogt@dima23.de>"]
 documentation = "https://github.com/dvogt23/mdBook-yml-header/README.md"
 edition = "2021"
