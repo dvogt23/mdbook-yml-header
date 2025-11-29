@@ -1,3 +1,11 @@
+---
+id: syntax
+aliases:
+  - syntax
+tags:
+  - syntax
+---
+
 ## Rust codeblocks
 
 This contains various examples of codeblocks, specific to rust

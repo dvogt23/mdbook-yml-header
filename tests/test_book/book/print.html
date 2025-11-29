@@ -1,0 +1,1492 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>mdBook test book</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A demo book to test and validate changes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-9dfbd86b.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-1c9cecc7.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-54204700.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">mdBook test book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <hr>
+<p>id: prefix
+aliases:</p>
+<ul>
+<li>test
+tags:</li>
+<li>test</li>
+</ul>
+<hr>
+<h1 id="prefix-chapter"><a class="header" href="#prefix-chapter">Prefix Chapter</a></h1>
+<p>This is to verify the placement and style of prefix chapter in book index.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="demo-book"><a class="header" href="#demo-book">Demo Book</a></h1>
+<p>This is a simple demo book, which is intended to be used for verifying and validating style changes in mdBook.
+This contains dummy examples of various markdown elements and code languages, so that one can check changes made in mdBook styles.</p>
+<p>This rough outline is :</p>
+<ul>
+<li>individual : contains basic markdown elements such as headings, paragraphs, links etc.</li>
+<li>languages : contains a <code>hello world</code> in each of supported language to see changes in syntax highlighting</li>
+<li>rust : contains language examples specific to rust, such as play pen, runnable examples etc.</li>
+</ul>
+<p>This is more for checking and fixing style, rather than verifying that correct code is generated for given markdown, that is better handled in tests.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="individual-common-mark-tags"><a class="header" href="#individual-common-mark-tags">Individual Common mark tags</a></h1>
+<p>This contains following tags:</p>
+<ul>
+<li>Headings</li>
+<li>Paragraphs</li>
+<li>Line breaks</li>
+<li>Emphasis</li>
+<li>Blockquotes</li>
+<li>Lists</li>
+<li>Code blocks</li>
+<li>Images</li>
+<li>Links and Horizontal rules</li>
+<li>Github tables</li>
+<li>Github Task Lists</li>
+<li>Strikethrough</li>
+<li>Mixed</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="chapter-heading"><a class="header" href="#chapter-heading">Chapter Heading</a></h1>
+<hr>
+<h1 id="really-big-heading"><a class="header" href="#really-big-heading">Really Big Heading</a></h1>
+<h2 id="big-heading"><a class="header" href="#big-heading">Big Heading</a></h2>
+<h3 id="normal-ish-heading"><a class="header" href="#normal-ish-heading">Normal-ish Heading</a></h3>
+<h4 id="small-heading"><a class="header" href="#small-heading">Small Heading…?</a></h4>
+<h5 id="really-small-heading"><a class="header" href="#really-small-heading">Really Small Heading</a></h5>
+<h6 id="is-it-even-a-heading-anymore---heading"><a class="header" href="#is-it-even-a-heading-anymore---heading">Is it even a heading anymore - heading</a></h6>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="paragraphs"><a href="#paragraphs" class="header">Paragraphs</a></h1>
+<p>Just a simple paragraph.</p>
+<p>Let’s stress test this.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit lorem, eleifend eu leo sit amet, suscipit feugiat libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin congue lectus sit amet lacus venenatis, ac sollicitudin purus condimentum. Suspendisse pretium volutpat sapien at gravida. In tincidunt, sem non accumsan consectetur, leo libero porttitor dolor, at imperdiet erat nibh quis leo. Cras dictum erat augue, quis pharetra justo porttitor posuere. Aenean sed lacinia justo, vel suscipit nisl. Etiam eleifend id mauris at gravida. Aliquam molestie cursus lorem pulvinar sollicitudin. Nam et ex dignissim, posuere sem non, pellentesque lacus. Morbi vulputate sed lorem et convallis. Duis non turpis eget elit posuere volutpat. Donec accumsan euismod enim, id consequat ex rhoncus ac. Pellentesque ac felis nisl. Duis imperdiet vel tellus ac iaculis.</p>
+<p>Vivamus nec tempus enim. Integer in ligula eget elit ornare vulputate id et est. Proin mi elit, sagittis nec urna et, iaculis imperdiet neque. Vestibulum placerat cursus dolor. Donec eu sodales nulla. Praesent ac tellus eros. Donec venenatis ligula id ex porttitor malesuada. Aliquam maximus, nisi in fringilla finibus, ante elit rhoncus dui, placerat semper nisl tellus quis odio. Cras luctus magna ultrices dolor pharetra volutpat. Maecenas non enim vitae ligula efficitur aliquet id quis quam. In sagittis mollis magna eu porta. Morbi at nulla et ante elementum pharetra in sed est. Nam commodo purus enim.</p>
+<p>Ut non elit sit amet urna luctus facilisis vel et sapien. Morbi nec metus at libero imperdiet sollicitudin eget quis lacus. Donec in ipsum at enim accumsan tempor vel sed magna. Aliquam non imperdiet neque. Etiam pharetra neque sed pretium interdum. Suspendisse potenti. Phasellus varius, lectus quis dapibus faucibus, purus mauris accumsan nibh, vel tempor quam metus nec sem. Nunc sagittis suscipit lorem eu finibus. Nullam augue leo, imperdiet vel diam et, vulputate scelerisque turpis. Nullam ut volutpat diam. Praesent cursus accumsan dui a commodo. Vivamus sed libero sed turpis facilisis rutrum id sed ligula. Ut id sollicitudin dui. Nulla pulvinar commodo lectus. Cras ut quam congue, consectetur dolor ac, consequat ante.</p>
+<p>Curabitur scelerisque sed leo eu facilisis. Nam faucibus neque eget dictum hendrerit. Duis efficitur ex sed vulputate volutpat. Praesent condimentum nisl ac sapien efficitur laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut ut nibh elit. Nunc a neque lobortis, tempus diam vitae, interdum magna. Aenean eget nisl sed justo volutpat interdum. Mauris malesuada ex nisl, a dignissim dui elementum eget. Suspendisse potenti.</p>
+<p>Praesent congue fringilla sem sed faucibus. Vivamus malesuada eget mauris at molestie. In sed faucibus nulla. Vivamus elementum accumsan metus quis suscipit. Maecenas interdum est nulla. Cras volutpat cursus nibh quis sollicitudin. Morbi vitae massa laoreet, aliquet tellus quis, consectetur ipsum. Mauris euismod congue purus non condimentum. Etiam laoreet mi vel sem consectetur gravida. Vestibulum volutpat magna nunc, vitae ultrices risus commodo eu.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit lorem, eleifend eu leo sit amet, suscipit feugiat libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin congue lectus sit amet lacus venenatis, ac sollicitudin purus condimentum. Suspendisse pretium volutpat sapien at gravida. In tincidunt, sem non accumsan consectetur, leo libero porttitor dolor, at imperdiet erat nibh quis leo. Cras dictum erat augue, quis pharetra justo porttitor posuere. Aenean sed lacinia justo, vel suscipit nisl. Etiam eleifend id mauris at gravida. Aliquam molestie cursus lorem pulvinar sollicitudin. Nam et ex dignissim, posuere sem non, pellentesque lacus. Morbi vulputate sed lorem et convallis. Duis non turpis eget elit posuere volutpat. Donec accumsan euismod enim, id consequat ex rhoncus ac. Pellentesque ac felis nisl. Duis imperdiet vel tellus ac iaculis.</p>
+<p>Vivamus nec tempus enim. Integer in ligula eget elit ornare vulputate id et est. Proin mi elit, sagittis nec urna et, iaculis imperdiet neque. Vestibulum placerat cursus dolor. Donec eu sodales nulla. Praesent ac tellus eros. Donec venenatis ligula id ex porttitor malesuada. Aliquam maximus, nisi in fringilla finibus, ante elit rhoncus dui, placerat semper nisl tellus quis odio. Cras luctus magna ultrices dolor pharetra volutpat. Maecenas non enim vitae ligula efficitur aliquet id quis quam. In sagittis mollis magna eu porta. Morbi at nulla et ante elementum pharetra in sed est. Nam commodo purus enim.</p>
+<p>Ut non elit sit amet urna luctus facilisis vel et sapien. Morbi nec metus at libero imperdiet sollicitudin eget quis lacus. Donec in ipsum at enim accumsan tempor vel sed magna. Aliquam non imperdiet neque. Etiam pharetra neque sed pretium interdum. Suspendisse potenti. Phasellus varius, lectus quis dapibus faucibus, purus mauris accumsan nibh, vel tempor quam metus nec sem. Nunc sagittis suscipit lorem eu finibus. Nullam augue leo, imperdiet vel diam et, vulputate scelerisque turpis. Nullam ut volutpat diam. Praesent cursus accumsan dui a commodo. Vivamus sed libero sed turpis facilisis rutrum id sed ligula. Ut id sollicitudin dui. Nulla pulvinar commodo lectus. Cras ut quam congue, consectetur dolor ac, consequat ante.</p>
+<p>Curabitur scelerisque sed leo eu facilisis. Nam faucibus neque eget dictum hendrerit. Duis efficitur ex sed vulputate volutpat. Praesent condimentum nisl ac sapien efficitur laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut ut nibh elit. Nunc a neque lobortis, tempus diam vitae, interdum magna. Aenean eget nisl sed justo volutpat interdum. Mauris malesuada ex nisl, a dignissim dui elementum eget. Suspendisse potenti.</p>
+<p>Praesent congue fringilla sem sed faucibus. Vivamus malesuada eget mauris at molestie. In sed faucibus nulla. Vivamus elementum accumsan metus quis suscipit. Maecenas interdum est nulla. Cras volutpat cursus nibh quis sollicitudin. Morbi vitae massa laoreet, aliquet tellus quis, consectetur ipsum. Mauris euismod congue purus non condimentum. Etiam laoreet mi vel sem consectetur gravida. Vestibulum volutpat magna nunc, vitae ultrices risus commodo eu.</p>
+<p>Hopefully everything above was rendered nicely, on both desktop and mobile.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="line-breaks"><a class="header" href="#line-breaks">Line breaks</a></h1>
+<p>This is a long<br>line with a couple of<br>line breaks in <br />
+between : both with two<br>spaces and return, <br />
+and with HTML tags.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="emphasis"><a class="header" href="#emphasis">Emphasis</a></h1>
+<p>This has <strong>bold text</strong> in between normal.</p>
+<p>This has <em>italic text</em> in between normal.</p>
+<p>A <strong>line</strong> having <em>both</em>, bold and italic text.</p>
+<p><strong>A bold line <em>having</em> italic text</strong></p>
+<p><em>An Italic line having <strong>bold</strong> text</em></p>
+<p>Now this is going <strong><em>out of hands</em></strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="blockquote"><a class="header" href="#blockquote">Blockquote</a></h1>
+<blockquote>
+<p>This is a quoted sentence.</p>
+</blockquote>
+<blockquote>
+<p>This is a quoted paragraph</p>
+<p>separated lines<br>here</p>
+</blockquote>
+<blockquote>
+<p>Nested</p>
+<blockquote>
+<p>Quoted<br>Paragraph</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h3 id="and-now"><a class="header" href="#and-now">And now,</a></h3>
+<p><strong>Let us <em>introduce</em></strong>
+All kinds of</p>
+<ul>
+<li>tags</li>
+<li>etc</li>
+<li>stuff</li>
+</ul>
+<ol>
+<li>
+<p>In</p>
+</li>
+<li>
+<p>The</p>
+</li>
+<li>
+<p>blockquote</p>
+<blockquote>
+<p>cause we can</p>
+<blockquote>
+<p>Cause we can</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lists"><a class="header" href="#lists">Lists</a></h1>
+<ol>
+<li>A</li>
+<li>Normal</li>
+<li>Ordered</li>
+<li>List</li>
+</ol>
+<hr>
+<ol>
+<li>A
+<ol>
+<li>Nested</li>
+<li>List</li>
+</ol>
+</li>
+<li>But</li>
+<li>Still</li>
+<li>Normal</li>
+</ol>
+<hr>
+<ul>
+<li>An</li>
+<li>Unordered</li>
+<li>Normal</li>
+<li>List</li>
+</ul>
+<hr>
+<ul>
+<li>Nested
+<ul>
+<li>Unordered</li>
+</ul>
+</li>
+<li>List</li>
+</ul>
+<hr>
+<ul>
+<li>This
+<ol>
+<li>Is</li>
+<li>Normal</li>
+</ol>
+</li>
+<li>?!</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="code"><a class="header" href="#code">Code</a></h1>
+<p>This section only does simple code blocks and inline code, detailed syntax highlight and stuff is in the languages section</p>
+<hr>
+<pre><code>This is a codeblock
+</code></pre>
+<hr>
+<p>This line contains <code>inline code</code></p>
+<hr>
+<pre><code>escaping ``` in ```, fun, isn't is?
+</code></pre>
+<hr>
+<pre><code class="language-bash editable">This is an editable codeblock
+</code></pre>
+<hr>
+<pre class="playground"><code class="language-rust edition2018"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// This links to a playpen
+<span class="boring">}</span></code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="images"><a class="header" href="#images">Images</a></h1>
+<p>For copyright and trademark information on these images, please check <a href="https://github.com/rust-lang/rust-artworkhttps://github.com/rust-lang/rust-artwork">rust-artwork repository</a></p>
+<h2 id="a-16x16-image"><a class="header" href="#a-16x16-image">A 16x16 image</a></h2>
+<p><img src="http://rust-lang.org/logos/rust-logo-16x16.png" alt="16x16 rust-lang logo"></p>
+<h2 id="a-32x32-image"><a class="header" href="#a-32x32-image">A 32x32 image</a></h2>
+<p><img src="http://rust-lang.org/logos/rust-logo-32x32-blk.png" alt="32x32 rust-lang logo"></p>
+<h2 id="a-256x256-image"><a class="header" href="#a-256x256-image">A 256x256 image</a></h2>
+<p><img src="http://rust-lang.org/logos/rust-logo-256x256.png" alt="256x256 rust-lang logo"></p>
+<h2 id="a-512x512-image"><a class="header" href="#a-512x512-image">A 512x512 image</a></h2>
+<p><img src="http://rust-lang.org/logos/rust-logo-512x512-blk.png" alt="512x512 rust-lang logo"></p>
+<h2 id="a-large-image"><a class="header" href="#a-large-image">A large image</a></h2>
+<p><img src="https://raw.githubusercontent.com/rust-lang/rust-artwork/master/2018-RustConf/lucy-mountain-climber.png" alt="2018 rust-conf art"></p>
+<h2 id="a-svg-image"><a class="header" href="#a-svg-image">A SVG image</a></h2>
+<p><img src="https://raw.githubusercontent.com/rust-lang/rust-artwork/461afe27d8e02451cf9f46e507f2c2a71d2b276b/2018-RustConf/lucy-mountain-climber.svg" alt="2018 rust-conf art svg"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="links-and-horizontal-rule"><a class="header" href="#links-and-horizontal-rule">Links and Horizontal Rule</a></h1>
+<p>This is followed by a Horizontal rule</p>
+<hr>
+<p>And this is preceded by a horizontal rule.</p>
+<p><a href="individual/www.rust-lang.org">This</a> should link to rust-lang website<br><a href="individual/www.rust-lang.org">So should this</a>.<br><strong><a href="individual/www.rust-lang.org">This</a></strong> is a strong link.<br><em><a href="individual/www.rust-lang.org">This</a></em> is italic.<br><strong><em><a href="individual/www.rust-lang.org">This</a></em></strong> is both.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="tables"><a class="header" href="#tables">Tables</a></h1>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>col1</th><th>col2</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+<hr>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>col1</th><th>col2</th></tr>
+</thead>
+<tbody>
+<tr><td>val1</td><td>val2</td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>col1</th><th>col2</th><th>col 3</th><th>col 4</th><th>col 5</th><th>col 6</th></tr>
+</thead>
+<tbody>
+<tr><td>val1</td><td>val2</td><td>val3</td><td>val5</td><td>val4</td><td>val6</td></tr>
+<tr><td>val1</td><td>val2</td><td>val3</td><td>val5</td><td>val4</td><td>val6</td></tr>
+<tr><td>val1</td><td>val2</td><td>val3</td><td>val5</td><td>val4</td><td>val6</td></tr>
+<tr><td>val1</td><td>val2</td><td>val3</td><td>val5</td><td>val4</td><td>val6</td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>col1</th><th>col2</th><th>col 3</th><th>col 4</th><th>col 5</th><th>col 6</th></tr>
+</thead>
+<tbody>
+<tr><td>This is a simple demo book, which is intended to be used for verifying and validating style changes in mdBook.</td><td>val2</td><td>val3</td><td>val5</td><td>val4</td><td>val6</td></tr>
+<tr><td>val1</td><td>val2</td><td>val3</td><td>val5</td><td>val4</td><td>val6</td></tr>
+<tr><td>val1</td><td>val2</td><td>val3</td><td>val5</td><td>val4</td><td>This is a simple demo book, which is intended to be used for verifying and validating style changes in mdBook.</td></tr>
+<tr><td>val1</td><td>val2</td><td>This is a simple demo book, which is intended to be used for verifying and validating style changes in mdBook.</td><td>This is a simple demo book, which is intended to be used for verifying and validating style changes in mdBook.</td><td>val4</td><td>val6</td></tr>
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="tasks"><a class="header" href="#tasks">Tasks</a></h1>
+<ul>
+<li><input disabled="" type="checkbox"> Task 1</li>
+<li><input disabled="" type="checkbox"> Task 2</li>
+<li><input disabled="" type="checkbox" checked=""> Completed Task 1</li>
+<li><input disabled="" type="checkbox" checked=""> Completed Task 2</li>
+</ul>
+<hr>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Important Task</strong></li>
+<li><input disabled="" type="checkbox" checked=""> <em>Completed Important task</em></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="strikethrough"><a class="header" href="#strikethrough">Strikethrough</a></h1>
+<p><del>This is Striked</del></p>
+<p><del>This is <strong>strong</strong>, <em>italic</em> , <strong><em>both</em></strong> and striked</del></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="mixed"><a class="header" href="#mixed">Mixed</a></h1>
+<p>This contains all tags randomly mixed together, to make sure style changes in one does not affect others.</p>
+<h3 id="a-heading"><a class="header" href="#a-heading">A heading</a></h3>
+<p><strong>Quite a Strong statement , to make</strong></p>
+<p><del>No, cross that</del></p>
+<blockquote>
+<p>Whose <strong>quote</strong> is this</p>
+<blockquote>
+<p>And <del>this</del></p>
+<blockquote>
+<ul>
+<li>and</li>
+<li>this</li>
+<li>also</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>You encountered a wild codepen
+</code></pre>
+<pre class="playground"><code class="language-rust editable edition2018">// The codepen is editable and runnable
+fn main(){
+    println!("Hello world!");
+}</code></pre>
+<p><kbd>Ctrl</kbd> + <kbd>S</kbd> saves a file.</p>
+<p>A random image sprinkled in between</p>
+<p><img src="http://rust-lang.org/logos/rust-logo-16x16.png" alt="16x16 rust-lang logo"></p>
+<hr>
+<ul>
+<li><del>An unordered list</del></li>
+<li><strong>Hello</strong></li>
+<li><em>World</em></li>
+<li>What
+<ol>
+<li>Should</li>
+<li>be</li>
+<li><code>put</code></li>
+<li>here?</li>
+<li><strong><kbd>Ctrl</kbd> + <kbd>S</kbd> saves a file.</strong></li>
+</ol>
+</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>col1</th><th>col2</th><th>col 3</th><th>col 4</th><th>col 5</th><th>col 6</th></tr>
+</thead>
+<tbody>
+<tr><td>val1</td><td>val2</td><td>val3</td><td>val5</td><td>val4</td><td>val6</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>col1</th><th>col2</th><th>col 3</th><th>An Questionable table header</th><th>col 5</th><th>col 6</th></tr>
+</thead>
+<tbody>
+<tr><td>val1</td><td>val2</td><td>val3</td><td>val5</td><td>val4</td><td>An equally Questionable long table value</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="things-to-do"><a class="header" href="#things-to-do">Things to do</a></h3>
+<ul>
+<li><input disabled="" type="checkbox" checked=""> Add individual tags</li>
+<li><input disabled="" type="checkbox"> Add language examples</li>
+<li><input disabled="" type="checkbox"> Add rust specific examples</li>
+</ul>
+<p>And another image</p>
+<p><img src="https://raw.githubusercontent.com/rust-lang/rust-artwork/461afe27d8e02451cf9f46e507f2c2a71d2b276b/2018-RustConf/lucy-mountain-climber.svg" alt="2018 rust-conf art svg"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="syntax-highlighting"><a class="header" href="#syntax-highlighting">Syntax Highlighting</a></h1>
+<p>This Currently contains following languages</p>
+<ul>
+<li>apache</li>
+<li>armasm</li>
+<li>bash</li>
+<li>c</li>
+<li>coffeescript</li>
+<li>cpp</li>
+<li>csharp</li>
+<li>css</li>
+<li>d</li>
+<li>diff</li>
+<li>go</li>
+<li>handlebars</li>
+<li>haskell</li>
+<li>http</li>
+<li>ini</li>
+<li>java</li>
+<li>javascript</li>
+<li>json</li>
+<li>julia</li>
+<li>kotlin</li>
+<li>less</li>
+<li>lua</li>
+<li>makefile</li>
+<li>markdown</li>
+<li>nginx</li>
+<li>objectivec</li>
+<li>perl</li>
+<li>php</li>
+<li>plaintext</li>
+<li>properties</li>
+<li>python</li>
+<li>r</li>
+<li>ruby</li>
+<li>rust</li>
+<li>scala</li>
+<li>scss</li>
+<li>shell</li>
+<li>sql</li>
+<li>swift</li>
+<li>typescript</li>
+<li>x86asm</li>
+<li>xml</li>
+<li>yaml</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<hr>
+<p>id: syntax
+aliases:</p>
+<ul>
+<li>syntax
+tags:</li>
+<li>syntax</li>
+</ul>
+<hr>
+<h1 id="syntax-highlights"><a class="header" href="#syntax-highlights">Syntax Highlights</a></h1>
+<h2 id="apache"><a class="header" href="#apache">apache</a></h2>
+<pre><code class="language-apache"># rewrite`s rules for wordpress pretty url
+LoadModule rewrite_module  modules/mod_rewrite.so
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [NC,L]
+
+ExpiresActive On
+ExpiresByType application/x-javascript  "access plus 1 days"
+
+Order Deny,Allow
+Allow from All
+
+&lt;Location /maps/&gt;
+  RewriteMap map txt:map.txt
+  RewriteMap lower int:tolower
+  RewriteCond %{REQUEST_URI} ^/([^/.]+)\.html$ [NC]
+  RewriteCond ${map:${lower:%1}|NOT_FOUND} !NOT_FOUND
+  RewriteRule .? /index.php?q=${map:${lower:%1}} [NC,L]
+&lt;/Location&gt;
+
+20.164.151.111 - - [20/Aug/2015:22:20:18 -0400] "GET /mywebpage/index.php HTTP/1.1" 403 772 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.220 Safari/535.1"
+</code></pre>
+<h2 id="armasm"><a class="header" href="#armasm">armasm</a></h2>
+<pre><code class="language-armasm">.data
+
+/* Data segment: define our message string and calculate its length. */
+msg:
+    .ascii      "Hello, ARM!\n"
+len = . - msg
+
+.text
+
+/* Our application's entry point. */
+.globl _start
+_start:
+    /* syscall write(int fd, const void *buf, size_t count) */
+    mov     %r0, $1     /* fd := STDOUT_FILENO */
+    ldr     %r1, =msg   /* buf := msg */
+    ldr     %r2, =len   /* count := len */
+    mov     %r7, $4     /* write is syscall #4 */
+    swi     $0          /* invoke syscall */
+
+    /* syscall exit(int status) */
+    mov     %r0, $0     /* status := 0 */
+    mov     %r7, $1     /* exit is syscall #1 */
+    swi     $0          /* invoke syscall */
+
+</code></pre>
+<h2 id="bash"><a class="header" href="#bash">bash</a></h2>
+<pre><code>#!/bin/bash
+
+###### CONFIG
+ACCEPTED_HOSTS="/root/.hag_accepted.conf"
+BE_VERBOSE=false
+
+if [ "$UID" -ne 0 ]
+then
+ echo "Superuser rights required"
+ exit 2
+fi
+
+genApacheConf(){
+ echo -e "# Host ${HOME_DIR}$1/$2 :"
+}
+
+echo '"quoted"' | tr -d \" &gt; text.txt
+
+</code></pre>
+<h2 id="c"><a class="header" href="#c">c</a></h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void main(int argc,char ** argv){
+    printf("Hello World!");
+}
+
+</code></pre>
+<h2 id="coffeescript"><a class="header" href="#coffeescript">coffeescript</a></h2>
+<pre><code class="language-coffeescript">grade = (student, period=(if b? then 7 else 6)) -&gt;
+  if student.excellentWork
+    "A+"
+  else if student.okayStuff
+    if student.triedHard then "B" else "B-"
+  else
+    "C"
+
+class Animal extends Being
+  constructor: (@name) -&gt;
+
+  move: (meters) -&gt;
+    alert @name + " moved #{meters}m."
+</code></pre>
+<h2 id="cpp"><a class="header" href="#cpp">cpp</a></h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+   cout &lt;&lt; "Hello, World!" &lt;&lt; endl; // This prints Hello, World!
+   return 0;
+}
+</code></pre>
+<h2 id="csharp"><a class="header" href="#csharp">csharp</a></h2>
+<pre><code class="language-csharp">using System;
+class App
+{
+  static void Main()
+  {
+    Console.WriteLine("Hello World!");
+  }
+}
+</code></pre>
+<h2 id="css"><a class="header" href="#css">css</a></h2>
+<pre><code class="language-css">@font-face {
+  font-family: Chunkfive;
+  src: url("Chunkfive.otf");
+}
+
+body,
+.usertext {
+  color: #f0f0f0;
+  background: #600;
+  font-family: Chunkfive, sans;
+  --heading-1: 30px/32px Helvetica, sans-serif;
+}
+
+@import url(print.css);
+@media print {
+  a[href^="http"]::after {
+    content: attr(href);
+  }
+}
+</code></pre>
+<h2 id="d"><a class="header" href="#d">d</a></h2>
+<pre><code class="language-d">/* This program prints a
+   hello world message
+   to the console.  */
+
+import std.stdio;
+
+void main()
+{
+    writeln("Hello, World!");
+}
+</code></pre>
+<h2 id="diff"><a class="header" href="#diff">diff</a></h2>
+<pre><code class="language-diff">Index: languages/ini.js
+===================================================================
+--- languages/ini.js    (revision 199)
++++ languages/ini.js    (revision 200)
+@@ -1,8 +1,7 @@
+ hljs.LANGUAGES.ini =
+ {
+   case_insensitive: true,
+-  defaultMode:
+-  {
++  defaultMode: {
+     contains: ['comment', 'title', 'setting'],
+     illegal: '[^\\s]'
+   },
+
+*** /path/to/original timestamp
+--- /path/to/new      timestamp
+***************
+*** 1,3 ****
+--- 1,9 ----
++ This is an important
++ notice! It should
++ therefore be located at
++ the beginning of this
++ document!
+
+! compress the size of the
+! changes.
+
+  It is important to spell
+</code></pre>
+<h2 id="go"><a class="header" href="#go">go</a></h2>
+<pre><code class="language-go">package main
+import "fmt"
+
+func main() {
+    fmt.Println("Hello World!")
+}
+</code></pre>
+<h2 id="handlebars"><a class="header" href="#handlebars">handlebars</a></h2>
+<pre><code class="language-handlebars">&lt;div class="entry"&gt;
+  {{! only show if author exists }}
+  {{#if author}}
+    &lt;h1&gt;{{firstName}} {{lastName}}&lt;/h1&gt;
+  {{/if}}
+&lt;/div&gt;
+</code></pre>
+<h2 id="haskell"><a class="header" href="#haskell">haskell</a></h2>
+<pre><code class="language-haskell">main :: IO ()
+main = putStrLn "Hello World!"
+
+</code></pre>
+<h2 id="http"><a class="header" href="#http">http</a></h2>
+<pre><code class="language-http">POST /task?id=1 HTTP/1.1
+Host: example.org
+Content-Type: application/json; charset=utf-8
+Content-Length: 137
+
+{
+  "status": "ok",
+  "extended": true,
+  "results": [
+    {"value": 0, "type": "int64"},
+    {"value": 1.0e+3, "type": "decimal"}
+  ]
+}
+
+</code></pre>
+<h2 id="ini"><a class="header" href="#ini">ini</a></h2>
+<pre><code class="language-ini">; boilerplate
+[package]
+name = "some_name"
+authors = ["Author"]
+description = "This is \
+a description"
+
+[[lib]]
+name = ${NAME}
+default = True
+auto = no
+counter = 1_000
+</code></pre>
+<h2 id="java"><a class="header" href="#java">java</a></h2>
+<pre><code class="language-java">class Main {
+ public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
+}
+</code></pre>
+<h2 id="javascript"><a class="header" href="#javascript">javascript</a></h2>
+<pre><code class="language-javascript">function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) +
+             ` class="${cls}"`;
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i &lt; classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log('undefined');
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;web-component&gt;{block}&lt;/web-component&gt;
+    &lt;/div&gt;
+  )
+}
+
+export  $initHighlight;
+</code></pre>
+<h2 id="json"><a class="header" href="#json">json</a></h2>
+<pre><code class="language-json">[
+  {
+    "title": "apples",
+    "count": [12000, 20000],
+    "description": { "text": "...", "sensitive": false }
+  },
+  {
+    "title": "oranges",
+    "count": [17500, null],
+    "description": { "text": "...", "sensitive": false }
+  }
+]
+</code></pre>
+<h2 id="julia"><a class="header" href="#julia">julia</a></h2>
+<pre><code class="language-julia"># function to calculate the volume of a sphere
+function sphere_vol(r)
+    # julia allows Unicode names (in UTF-8 encoding)
+    # so either "pi" or the symbol π can be used
+    return 4/3*pi*r^3
+end
+
+# functions can also be defined more succinctly
+quadratic(a, sqr_term, b) = (-b + sqr_term) / 2a
+
+# calculates x for 0 = a*x^2+b*x+c, arguments types can be defined in function definitions
+function quadratic2(a::Float64, b::Float64, c::Float64)
+    # unlike other languages 2a is equivalent to 2*a
+    # a^2 is used instead of a**2 or pow(a,2)
+    sqr_term = sqrt(b^2-4a*c)
+    r1 = quadratic(a, sqr_term, b)
+    r2 = quadratic(a, -sqr_term, b)
+    # multiple values can be returned from a function using tuples
+    # if the return keyword is omitted, the last term is returned
+    r1, r2
+end
+
+vol = sphere_vol(3)
+</code></pre>
+<h2 id="kotlin"><a class="header" href="#kotlin">kotlin</a></h2>
+<pre><code class="language-kotlin">package org.kotlinlang.play
+
+fun main() {
+    println("Hello, World!")
+}
+</code></pre>
+<h2 id="less"><a class="header" href="#less">less</a></h2>
+<pre><code class="language-less">@import "fruits";
+
+@rhythm: 1.5em;
+
+@media screen and (min-resolution: 2dppx) {
+  body {
+    font-size: 125%;
+  }
+}
+
+section &gt; .foo + #bar:hover [href*="less"] {
+  margin: @rhythm 0 0 @rhythm;
+  padding: calc(5% + 20px);
+  background: #f00ba7 url(http://placehold.alpha-centauri/42.png) no-repeat;
+  background-image: linear-gradient(-135deg, wheat, fuchsia) !important ;
+  background-blend-mode: multiply;
+}
+
+@font-face {
+  font-family: /* ? */ "Omega";
+  src: url("../fonts/omega-webfont.woff?v=2.0.2");
+}
+
+.icon-baz::before {
+  display: inline-block;
+  font-family: "Omega", Alpha, sans-serif;
+  content: "\f085";
+  color: rgba(98, 76 /* or 54 */, 231, 0.75);
+}
+</code></pre>
+<h2 id="lua"><a class="header" href="#lua">lua</a></h2>
+<pre><code class="language-lua">--[[
+Simple signal/slot implementation
+]]
+local signal_mt = {
+    __index = {
+        register = table.insert
+    }
+}
+function signal_mt.__index:emit(... --[[ Comment in params ]])
+    for _, slot in ipairs(self) do
+        slot(self, ...)
+    end
+end
+local function create_signal()
+    return setmetatable({}, signal_mt)
+end
+
+-- Signal test
+local signal = create_signal()
+signal:register(function(signal, ...)
+    print(...)
+end)
+signal:emit('Answer to Life, the Universe, and Everything:', 42)
+
+--[==[ [=[ [[
+Nested ]]
+multi-line ]=]
+comment ]==]
+[==[ Nested
+[=[ multi-line
+[[ string
+]] ]=] ]==]
+</code></pre>
+<h2 id="makefile"><a class="header" href="#makefile">makefile</a></h2>
+<pre><code class="language-makefile"># Makefile
+
+BUILDDIR      = _build
+EXTRAS       ?= $(BUILDDIR)/extras
+
+.PHONY: main clean
+
+main:
+	@echo "Building main facility..."
+	build_main $(BUILDDIR)
+
+clean:
+	rm -rf $(BUILDDIR)/*
+
+</code></pre>
+<h2 id="markdown"><a class="header" href="#markdown">markdown</a></h2>
+<pre><code class="language-markdown"># hello world
+
+you can write text [with links](http://example.com) inline or [link references][1].
+
+- one _thing_ has *em*phasis
+- two **things** are **bold**
+
+[1]: http://example.com
+
+---
+
+# hello world
+
+&lt;this_is inline="xml"&gt;&lt;/this_is&gt;
+
+&gt; markdown is so cool
+
+    so are code segments
+
+1. one thing (yeah!)
+2. two thing `i can write code`, and `more` wipee!
+</code></pre>
+<h2 id="nginx"><a class="header" href="#nginx">nginx</a></h2>
+<pre><code class="language-nginx">user  www www;
+worker_processes  2;
+pid /var/run/nginx.pid;
+error_log  /var/log/nginx.error_log  debug | info | notice | warn | error | crit;
+
+events {
+    connections   2000;
+    use kqueue | rtsig | epoll | /dev/poll | select | poll;
+}
+
+http {
+    log_format main      '$remote_addr - $remote_user [$time_local] '
+                         '"$request" $status $bytes_sent '
+                         '"$http_referer" "$http_user_agent" '
+                         '"$gzip_ratio"';
+
+    send_timeout 3m;
+    client_header_buffer_size 1k;
+
+    gzip on;
+    gzip_min_length 1100;
+
+    #lingering_time 30;
+
+    server {
+        server_name   one.example.com  www.one.example.com;
+        access_log   /var/log/nginx.access_log  main;
+
+        rewrite (.*) /index.php?page=$1 break;
+
+        location / {
+            proxy_pass         http://127.0.0.1/;
+            proxy_redirect     off;
+            proxy_set_header   Host             $host;
+            proxy_set_header   X-Real-IP        $remote_addr;
+            charset            koi8-r;
+        }
+
+        location /api/ {
+            fastcgi_pass 127.0.0.1:9000;
+        }
+
+        location ~* \.(jpg|jpeg|gif)$ {
+            root         /spool/www;
+        }
+    }
+}
+</code></pre>
+<h2 id="objectivec"><a class="header" href="#objectivec">objectivec</a></h2>
+<pre><code class="language-objectivec">#import &lt;Foundation/Foundation.h&gt;
+
+int main(int argc, const char * argv[]) {
+    @mylak {
+        NSLog(@"Hello World!");
+    }
+    return 0;
+}
+
+</code></pre>
+<h2 id="perl"><a class="header" href="#perl">perl</a></h2>
+<pre><code class="language-perl">print "Hello World!\n";
+</code></pre>
+<h2 id="php"><a class="header" href="#php">php</a></h2>
+<pre><code class="language-php">&lt;?php
+echo "Hello World!";
+?&gt;
+</code></pre>
+<h2 id="plaintext"><a class="header" href="#plaintext">plaintext</a></h2>
+<pre><code class="language-plaintext">I think this is simply plain text?
+Hello World!
+</code></pre>
+<h2 id="properties"><a class="header" href="#properties">properties</a></h2>
+<pre><code class="language-properties"># .properties
+! Exclamation mark = comments, too
+
+key1 = value1
+key2 : value2
+key3   value3
+key\ spaces multiline\
+            value4
+empty_key
+! Key can contain escaped chars
+\:\= = value5
+</code></pre>
+<h2 id="python"><a class="header" href="#python">python</a></h2>
+<pre><code class="language-python">@requires_authorization(roles=["ADMIN"])
+def somefunc(param1='', param2=0):
+    r'''A docstring'''
+    if param1 &gt; param2: # interesting
+        print 'Gre\'ater'
+    return (param2 - param1 + 1 + 0b10l) or None
+
+class SomeClass:
+    pass
+
+&gt;&gt;&gt; message = '''interpreter
+... prompt'''
+</code></pre>
+<h2 id="r"><a class="header" href="#r">r</a></h2>
+<pre><code class="language-r">require(stats)
+
+#' Compute different averages
+#'
+#' @param x \code{numeric} vector of sample data
+#' @param type \code{character} vector of length 1 specifying the average type
+#' @return \code{centre} returns the sample average according to the chosen method.
+#' @examples
+#' centre(rcauchy(10), "mean")
+#' @export
+centre &lt;- function(x, type) {
+  switch(type,
+         mean = mean(x),
+         median = median(x),
+         trimmed = mean(x, trim = .1))
+}
+x &lt;- rcauchy(10)
+centre(x, "mean")
+
+library(ggplot2)
+
+models &lt;- tibble::tribble(
+  ~model_name,    ~ formula,
+  "length-width", Sepal.Length ~ Petal.Width + Petal.Length,
+  "interaction",  Sepal.Length ~ Petal.Width * Petal.Length
+)
+
+iris %&gt;%
+  nest_by(Species) %&gt;%
+  left_join(models, by = character()) %&gt;%
+  rowwise(Species, model_name) %&gt;%
+  mutate(model = list(lm(formula, data = data))) %&gt;%
+  summarise(broom::glance(model))
+</code></pre>
+<h2 id="ruby"><a class="header" href="#ruby">ruby</a></h2>
+<pre><code class="language-ruby"># The Greeter class
+class Greeter
+  def initialize(name)
+    @name = name.capitalize
+  end
+
+  def salute
+    puts "Hello #{@name}!"
+  end
+end
+
+g = Greeter.new("world")
+g.salute
+</code></pre>
+<h2 id="rust"><a class="header" href="#rust">rust</a></h2>
+<pre class="playground"><code class="language-rust edition2018">fn main()-&gt;(){
+    println!("Hello World!");
+}</code></pre>
+<h2 id="scala"><a class="header" href="#scala">scala</a></h2>
+<pre><code class="language-scala">/**
+ * A person has a name and an age.
+ */
+case class Person(name: String, age: Int)
+
+abstract class Vertical extends CaseJeu
+case class Haut(a: Int) extends Vertical
+case class Bas(name: String, b: Double) extends Vertical
+
+sealed trait Ior[+A, +B]
+case class Left[A](a: A) extends Ior[A, Nothing]
+case class Right[B](b: B) extends Ior[Nothing, B]
+case class Both[A, B](a: A, b: B) extends Ior[A, B]
+
+trait Functor[F[_]] {
+  def map[A, B](fa: F[A], f: A =&gt; B): F[B]
+}
+
+// beware Int.MinValue
+def absoluteValue(n: Int): Int =
+  if (n &lt; 0) -n else n
+
+def interp(n: Int): String =
+  s"there are $n ${color} balloons.\n"
+
+type ξ[A] = (A, A)
+
+trait Hist { lhs =&gt;
+  def ⊕(rhs: Hist): Hist
+}
+
+def gsum[A: Ring](as: Seq[A]): A =
+  as.foldLeft(Ring[A].zero)(_ + _)
+
+val actions: List[Symbol] =
+  'init :: 'read :: 'write :: 'close :: Nil
+</code></pre>
+<h2 id="scss"><a class="header" href="#scss">scss</a></h2>
+<pre><code class="language-scss">import "compass/reset";
+
+// variables
+$colorGreen: #008000;
+$colorGreenDark: darken($colorGreen, 10);
+
+@mixin container {
+    max-width: 980px;
+}
+
+// mixins with parameters
+@mixin button($color:green) {
+    @if ($color == green) {
+        background-color: #008000;
+    }
+    @else if ($color == red) {
+        background-color: #B22222;
+    }
+}
+
+button {
+    @include button(red);
+}
+
+div,
+.navbar,
+#header,
+input[type="input"] {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.row-12 &gt; [class*="spans"] {
+    border-left: 1px solid #B5C583;
+}
+
+</code></pre>
+<h2 id="shell"><a class="header" href="#shell">shell</a></h2>
+<pre><code class="language-shell">$ echo $EDITOR
+vim
+$ git checkout main
+Switched to branch 'main'
+Your branch is up-to-date with 'origin/main'.
+$ git push
+Everything up-to-date
+$ echo 'All
+&gt; done!'
+All
+done!
+
+</code></pre>
+<h2 id="sql"><a class="header" href="#sql">sql</a></h2>
+<pre><code class="language-sql">CREATE TABLE "topic" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "forum_id" integer NOT NULL,
+    "subject" varchar(255) NOT NULL
+);
+ALTER TABLE "topic"
+ADD CONSTRAINT forum_id FOREIGN KEY ("forum_id")
+REFERENCES "forum" ("id");
+
+-- Initials
+insert into "topic" ("forum_id", "subject")
+values (2, 'D''artagnian');
+</code></pre>
+<h2 id="swift"><a class="header" href="#swift">swift</a></h2>
+<pre><code class="language-swift">import Foundation
+
+@objc class Person: Entity {
+  var name: String!
+  var age:  Int!
+
+  init(name: String, age: Int) {
+    /* /* ... */ */
+  }
+
+  // Return a descriptive string for this person
+  func description(offset: Int = 0) -&gt; String {
+    return "\(name) is \(age + offset) years old"
+  }
+}
+</code></pre>
+<h2 id="typescript"><a class="header" href="#typescript">typescript</a></h2>
+<pre><code class="language-typescript">class MyClass {
+  public static myValue: string;
+  constructor(init: string) {
+    this.myValue = init;
+  }
+}
+import fs = require("fs");
+module MyModule {
+  export interface MyInterface extends Other {
+    myProperty: any;
+  }
+}
+declare magicNumber number;
+myArray.forEach(() =&gt; { }); // fat arrow syntax
+
+</code></pre>
+<h2 id="x86asm"><a class="header" href="#x86asm">x86asm</a></h2>
+<pre><code class="language-x86asm">section .text
+extern  _MessageBoxA@16
+%if     __NASM_VERSION_ID__ &gt;= 0x02030000
+safeseh handler         ; register handler as "safe handler"
+%endif
+
+handler:
+        push    dword 1 ; MB_OKCANCEL
+        push    dword caption
+        push    dword text
+        push    dword 0
+        call    _MessageBoxA@16
+        sub     eax,1   ; incidentally suits as return value
+                        ; for exception handler
+        ret
+
+global  _main
+_main:  push    dword handler
+        push    dword [fs:0]
+        mov     dword [fs:0], esp
+        xor     eax,eax
+        mov     eax, dword[eax]   ; cause exception
+        pop     dword [fs:0]      ; disengage exception handler
+        add     esp, 4
+        ret
+
+avx2:   vzeroupper
+        push      rbx
+        mov       rbx,   rsp
+        sub       rsp,   0h20
+        vmovdqa   ymm0,  [rcx]
+        vpaddb    ymm0,  [rdx]
+        leave
+        ret
+
+text:   db      'OK to rethrow, CANCEL to generate core dump',0
+caption:db      'SEGV',0
+
+section .drectve info
+        db      '/defaultlib:user32.lib /defaultlib:msvcrt.lib '
+</code></pre>
+<h2 id="xml"><a class="header" href="#xml">xml</a></h2>
+<pre><code class="language-xml">&lt;!DOCTYPE html&gt;
+&lt;title&gt;Title&lt;/title&gt;
+
+&lt;style&gt;body {width: 500px;}&lt;/style&gt;
+
+&lt;script type="application/javascript"&gt;
+  function $init() {return true;}
+&lt;/script&gt;
+
+&lt;body&gt;
+  &lt;p checked class="title" id='title'&gt;Title&lt;/p&gt;
+  &lt;!-- here goes the rest of the page --&gt;
+&lt;/body&gt;
+</code></pre>
+<h2 id="yaml"><a class="header" href="#yaml">yaml</a></h2>
+<pre><code class="language-yaml">---
+# comment
+string_1: "Bar"
+string_2: 'bar'
+string_3: bar
+inline_keys_ignored: sompath/name/file.jpg
+keywords_in_yaml:
+  - true
+  - false
+  - TRUE
+  - FALSE
+  - 21
+  - 21.0
+  - !!str 123
+"quoted_key": &amp;foobar
+  bar: foo
+  foo:
+  "foo": bar
+
+reference: *foobar
+
+multiline_1: |
+  Multiline
+  String
+multiline_2: &gt;
+  Multiline
+  String
+multiline_3: "
+  Multiline string
+  "
+
+ansible_variables: "foo {{variable}}"
+
+array_nested:
+- a
+- b: 1
+  c: 2
+- b
+- comment
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<hr>
+<p>id: syntax
+aliases:</p>
+<ul>
+<li>syntax
+tags:</li>
+<li>syntax</li>
+</ul>
+<hr>
+<h1 id="rust-specific-code-examples"><a class="header" href="#rust-specific-code-examples">Rust specific code examples</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="rust-codeblocks-1"><a href="#rust-codeblocks-1" class="header">Rust Codeblocks</a></h1>
+<hr>
+<p>id: syntax
+aliases:</p>
+<ul>
+<li>syntax
+tags:</li>
+<li>syntax</li>
+</ul>
+<hr>
+<h2 id="rust-codeblocks"><a class="header" href="#rust-codeblocks">Rust codeblocks</a></h2>
+<p>This contains various examples of codeblocks, specific to rust</p>
+<h2 id="simple"><a class="header" href="#simple">Simple</a></h2>
+<pre class="playground"><code class="language-rust edition2018">fn main(){
+    println!("Hello world!");
+}</code></pre>
+<h2 id="with-hidden-lines"><a class="header" href="#with-hidden-lines">With Hidden lines</a></h2>
+<pre class="playground"><code class="language-rust edition2018"><span class="boring">fn main(){
+</span>    println!("Hello world!");
+<span class="boring">}</span></code></pre>
+<h2 id="editable"><a class="header" href="#editable">Editable</a></h2>
+<pre class="playground"><code class="language-rust editable edition2018">fn main(){
+    println!("Hello world!");
+}</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="suffix-chapter"><a class="header" href="#suffix-chapter">Suffix Chapter</a></h1>
+<p>This is to verify the placement and style of suffix chapter in book index.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+        <script>
+            window.playground_line_numbers = true;
+        </script>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace-2a3cd908.js"></script>
+        <script src="mode-rust-2c9d5c9a.js"></script>
+        <script src="editor-16ca416c.js"></script>
+        <script src="theme-dawn-4493f9c8.js"></script>
+        <script src="theme-tomorrow_night-9dbe62a9.js"></script>
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>

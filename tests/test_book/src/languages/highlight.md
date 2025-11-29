@@ -1,3 +1,11 @@
+---
+id: syntax
+aliases:
+  - syntax
+tags:
+  - syntax
+---
+
 # Syntax Highlights
 
 ## apache
@@ -135,7 +143,7 @@ class App
 ```css
 @font-face {
   font-family: Chunkfive;
-  src: url('Chunkfive.otf');
+  src: url("Chunkfive.otf");
 }
 
 body,
@@ -148,7 +156,7 @@ body,
 
 @import url(print.css);
 @media print {
-  a[href^='http']::after {
+  a[href^="http"]::after {
     content: attr(href);
   }
 }
@@ -218,7 +226,7 @@ func main() {
 ## handlebars
 
 ```handlebars
-<div class='entry'>
+<div class="entry">
   {{! only show if author exists }}
   {{#if author}}
     <h1>{{firstName}} {{lastName}}</h1>
@@ -364,7 +372,7 @@ fun main() {
 ## less
 
 ```less
-@import 'fruits';
+@import "fruits";
 
 @rhythm: 1.5em;
 
@@ -374,7 +382,7 @@ fun main() {
   }
 }
 
-section > .foo + #bar:hover [href*='less'] {
+section > .foo + #bar:hover [href*="less"] {
   margin: @rhythm 0 0 @rhythm;
   padding: calc(5% + 20px);
   background: #f00ba7 url(http://placehold.alpha-centauri/42.png) no-repeat;
@@ -383,14 +391,14 @@ section > .foo + #bar:hover [href*='less'] {
 }
 
 @font-face {
-  font-family: /* ? */ 'Omega';
-  src: url('../fonts/omega-webfont.woff?v=2.0.2');
+  font-family: /* ? */ "Omega";
+  src: url("../fonts/omega-webfont.woff?v=2.0.2");
 }
 
 .icon-baz::before {
   display: inline-block;
-  font-family: 'Omega', Alpha, sans-serif;
-  content: '\f085';
+  font-family: "Omega", Alpha, sans-serif;
+  content: "\f085";
   color: rgba(98, 76 /* or 54 */, 231, 0.75);
 }
 ```

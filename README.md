@@ -17,6 +17,17 @@ Then add this to your `book.toml`
 [preprocessor.yml-header]
 ```
 
+## Release
+
+Checkout new branch and install relase local for test:
+
+```bash
+cargo build --release
+
+cd test/test_book
+mdbook serve
+```
+
 ## License
 
 MPL. See [LICENSE](LICENSE).  
