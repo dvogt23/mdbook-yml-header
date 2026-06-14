@@ -2,7 +2,7 @@
 name = "mdbook-yml-header"
 version = "0.1.5"
 authors = ["Vogt, Dimitrij <divogt@dima23.de>"]
-documentation = "https://github.com/dvogt23/mdBook-yml-header/README.md"
+documentation = "https://github.com/dvogt23/mdbook-yml-header/blob/main/README.md"
 edition = "2021"
 keywords = ["book", "mdbook", "rustbook", "markdown", "preprocessor"]
 license = "MPL-2.0"
